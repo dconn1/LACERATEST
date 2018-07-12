@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Ninject.Model.EmployeeModel>
+
+@{
+    ViewBag.Title = "Employees";
+}
+
+<h2>Employees</h2>
+
+<table class="table">
+    <tr>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <p>Name: @item.EmployeeName</p>
+        </td>
+        <td>
+            <p>Birthdate: @item.Birthdate.ToShortDateString()</p>
+        </td>
+        <td>
+            <p>Salary: @item.Salary.ToString()</p>
+        </td>
+        <td>
+            <p>Hired On: @item.DateHired.ToShortDateString()</p>
+        </td>
+        <td>
+            <p>Status: @item.Status</p>
+        </td>
+    </tr>
+}
+
+</table>
